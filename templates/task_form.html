@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<title>{% block title %} Add TODO {% endblock title %}</title>
+
+<div class="container py-3 py-md-5 px-3">
+    <h1>Add new TODO</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+      <div class="row">
+        <div class="col-12 col-lg-6 mb-3">
+          <label for="todoTitle" class="form-label">Title</label>
+          <input type="text" class="form-control" id="todoTitle" name="title" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+          <label for="todoDate" class="form-label">Date</label>
+          <input type="date" class="form-control" id="todoDate" name="date" />
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+          <label for="todoProgress" class="form-label">Progress</label>
+          <input
+            type="text"
+            class="form-control"
+            id="todoProgress"
+            placeholder="e.g. 10"
+            name="progress"
+          />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+
+    <p class="mt-4 text-secondary">
+      <a href="{% url 'overview' %}">Overview</a> |
+      <a href="{% url 'imprint' %}">Imprint</a>
+    </p>
+  </div>
+
+{% endblock content %}

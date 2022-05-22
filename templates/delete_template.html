@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+<title>{% block title %} Want To Delete {% endblock title %}</title>
+
+{% block content %}
+<div class="container bg-white text-dark p-4 my-5">
+    <div class="container bg-light p-5">
+        <h1 class="display-4">Are you sure, you want to delete <span class="text-primary">{{ object }}</span>?</h1>
+        <hr>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Are you sure, you want to delete "{{ object }}"?</p>
+            <a class="btn btn-lg btn-primary" href="{% url 'overview' %}">Go Back</a>&nbsp;&nbsp;&nbsp;
+            <input class="btn btn-lg btn-danger" type="submit" value="Confirm">
+        </form>
+    </div>
+</div>
+{% endblock content %}

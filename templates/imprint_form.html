@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<title>{% block title %} Update Imprint {% endblock title %}</title>
+
+<div class="container py-3 py-md-5 px-3">
+    <h1>Update Imprint</h1>
+<br>
+    <form action="" method="post">
+        {% csrf_token %}
+      <div class="row">
+        <div class="col-12 col-lg-12 mb-3">
+          {{ form.authors }}
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary float-end">Update</button>
+    </form>
+<br>
+    <p class="mt-4 text-secondary">
+      <a href="{% url 'overview' %}">Overview</a> |
+      <a href="{% url 'imprint' %}">Imprint</a>
+    </p>
+  </div>
+
+{% endblock content %}

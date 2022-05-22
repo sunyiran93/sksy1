@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+<title>{% block title %} Imprint {% endblock title %}</title>
+
+{% block content %}
+
+  <div class="container py-3 py-md-5 px-3">
+    <div class="d-flex align-items-center pb-3">
+      <h1>Imprint</h1>
+      <a class="ms-auto btn btn-primary" href="{% url 'update-imprint' imprints.id %}">Update</a>
+    </div>
+
+    <h5 class="mt-2">
+      Authors: {{ imprints }}
+    </h5>
+    <br>
+    <p class="mt-4 text-secondary">
+      Go back to
+      <a href="/">Overview</a>
+    </p>
+  </div>
+  
+{% endblock content %}
